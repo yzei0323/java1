@@ -1,0 +1,10 @@
+package day03;
+
+public class 변수_문자형 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

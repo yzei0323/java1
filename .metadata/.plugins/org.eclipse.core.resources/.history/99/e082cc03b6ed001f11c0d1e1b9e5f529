@@ -1,0 +1,23 @@
+package day03;
+
+public class 형변환 {
+
+	public static void main(String[] args) {
+		
+		
+		//형 : 자료형 (type)
+		
+		// 형변환 : type을 변환하는 것
+		// -자동형변환 (묵시적)
+		// -강제형변환 (명시적)
+		
+		
+		byte b = 127;
+		
+		byte c = (byte) 128; //형을 강제로 변환 시킴
+		
+		System.out.println(c);
+
+	}
+
+}

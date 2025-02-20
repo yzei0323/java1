@@ -1,0 +1,12 @@
+package day04;
+
+public class Scanner사용하기 {
+
+	public static void main(String[] args) {
+	
+		
+		Scanner sc = new Scanner(System.in); 
+
+	}
+
+}
