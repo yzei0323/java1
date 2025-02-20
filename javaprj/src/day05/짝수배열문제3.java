@@ -41,9 +41,7 @@ public class 짝수배열문제3 {
 		
 		//출력
 		for(int i=0; i<index; i++) {
-			System.out.print("[");
-			System.out.print(nums[i]+" ");
-			System.out.print("]");
+			System.out.println(nums[i]);
 		}
 	}
 

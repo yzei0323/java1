@@ -1,0 +1,27 @@
+package day05.practice;
+
+import java.util.Scanner;
+
+public class 배열실습3_3 {
+
+	public static void main(String[] args) {
+		
+		//3. 응용배열문제
+		
+		//3) 임의의 수가 입력되고 입력한 수에 대한 약수를 배열에 저장하고 출력하기
+		//	 - 배열 사용하지 않기
+		//	 - 배열을 사용하여 약수를 모두 구한 후 한꺼번에 출력하기
+		
+		int input=0;
+		int factors;
+		Scanner sc = new Scanner(System.in);
+		
+		input=sc.nextInt();
+		for(int i=1; i<=input; i++) {
+			if(input%i==0) {
+				System.out.print(i+" ");
+			}
+		}
+	}
+
+}

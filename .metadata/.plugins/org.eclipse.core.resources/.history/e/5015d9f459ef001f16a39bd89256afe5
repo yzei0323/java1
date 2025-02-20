@@ -1,0 +1,26 @@
+package day05.practice;
+
+public class 배열실습2 {
+
+	public static void main(String[] args) {
+		
+		//2. 기본배열문제
+		//이번주 날씨 정보가 배열로 제공되었다.
+		// int[] Temperatures = {33, 35, 32, 35, 36, 35, 34};
+		
+		//1) 이번주 날씨정보를 출력하시오
+		
+		int[] Temperatures = {33, 35, 32, 35, 36, 35, 34};
+		
+		System.out.print("이번주 최고기온은 ");
+		for(int i=0; i<Temperatures.length; i++) {
+			for(int j=0; j<Temperatures.length-1; j++) {
+				System.out.print(Temperatures[j]+",");
+			}
+		}
+		System.out.print("입니다.");
+		
+
+	}
+
+}
