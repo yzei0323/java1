@@ -1,0 +1,24 @@
+package day04;
+
+public class 최하은피보나치분수항 {
+
+	public static void main(String[] args) {
+		
+		
+		int plus = 1;		// 홀수항 분자 (+기호 항의 분자)
+		int minus = 2;	// 짝수항 분자 (-기호 항의 분자)
+		
+		double plusadd = 1;		// 홀수항 합계 (+기호 항의 합계)
+		double minusadd = 1;	// 짝수항 합계 (-기호 항의 합계)
+		
+		double sum;
+		
+		while(minus<=10) {
+			
+			plus = plus+2;	  //3  //분자
+			minus = minus+2;  //4  //분모
+		}
+
+	}
+
+}

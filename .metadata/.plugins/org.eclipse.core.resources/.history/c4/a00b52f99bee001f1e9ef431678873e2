@@ -1,0 +1,12 @@
+package day04;
+
+public class 제어구조문제6번 {
+
+	public static void main(String[] args) {
+		
+		
+		// 6. 일정 관리 프로그램 만들기(반복)
+
+	}
+
+}
