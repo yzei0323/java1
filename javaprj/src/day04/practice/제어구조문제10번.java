@@ -1,0 +1,23 @@
+package day04.practice;
+
+public class 제어구조문제10번 {
+
+	public static void main(String[] args) {
+		
+		// 10. * 별 하나 이용해서 다음과 같이 출력
+		
+		//***
+		//***
+		
+		
+		for(int i=1; i<=2; i++) {
+			for(int j=1; j<=3; j++) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+		
+
+	}
+
+}

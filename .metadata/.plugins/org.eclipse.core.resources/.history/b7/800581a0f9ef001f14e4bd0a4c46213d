@@ -1,0 +1,18 @@
+package day06;
+
+public class 기본형변수_참조형변수 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		//프로그램에서 실제적으로 사용되는 데이터 값을 저장하는 변수 : 기본형 변수
+		
+		int a=10;	//10점 10원 10도 값 자체
+		char b='A';	//'A' 문자 데이터 값 자체
+		double c=25.6;
+		boolean d=true;
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package day06.practice;
+
+import java.util.Scanner;
+
+public class 실습문제1 {
+
+	public static void main(String[] args) {
+		
+		
+		//1. 화폐매수 구하기 문제
+		//  : 사원명과 출장비가 입력될 때 출장비에 대한 화폐매수(고액권부터)를 구하시오
+		//    화폐단위는 다음과 같다 50000, 10000, 5000, 1000, 500, 100, 50, 10
+
+		Scanner sc = new Scanner(System.in);
+		String name;
+		int price;
+		
+		System.out.print("이름을 입력하세요: ");
+		name = sc.next();
+		System.out.print("출장비를 입력하세요: ");
+		price = sc.nextInt();
+		
+		
+		int cnt50000 = price/50000;
+		price=price%50000;
+		
+		int cnt10000 = price/10000;
+		price=price%10000;
+		
+		
+		
+		System.out.println("오만원: "+cnt50000+", 만원: "+cnt10000);
+		
+	
+	}
+
+}

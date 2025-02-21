@@ -1,0 +1,15 @@
+package day04.practice;
+
+public class 제어구조문제14번 {
+
+	public static void main(String[] args) {
+		
+		
+		// 14. 연산자와 두 수가 입력되면 사칙연산하는 프로그램을 작성하시오
+		
+	
+		
+
+	}
+
+}

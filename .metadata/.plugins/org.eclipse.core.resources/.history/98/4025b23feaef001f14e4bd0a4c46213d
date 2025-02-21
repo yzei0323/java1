@@ -1,0 +1,22 @@
+package day05.practice;
+
+public class 배열실습1 {
+
+	public static void main(String[] args) {
+		
+		//1. 배열저장출력문제 (값 넣고 출력하기)
+		
+		//1) 1차원배열 사용하기 - 일주일 점심메뉴 또는 단어
+		
+		String[] foods = {"햄부기", "피자", "치킨", "떡볶이", "마라탕", "찜닭", "라면"};
+		
+		for(int i=0; i<foods.length; i++) {
+			System.out.print(foods[i]+" ");
+		}
+		System.out.println("");
+		
+		
+		
+	}
+
+}

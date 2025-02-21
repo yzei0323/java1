@@ -1,0 +1,51 @@
+package day06;
+
+public class 배열2차원_행의개수가다른 {
+
+	public static void main(String[] args) {
+		
+		
+		/*
+		 	2,4,6
+		 	8,10,12,14,16
+		 	18,20
+		*/
+		
+		//각 행의 개수가 다른 2차원 배열 만들기
+		
+		int[][] arr = new int[3][];
+		
+		
+		arr[0] = new int[3];
+		arr[1] = new int[5];
+		arr[2] = new int[2];
+		
+		
+		//1) 3개의 1차원배열의 주소를 저장할 참조형변수배열이 만들어짐
+		//2) 각 1차원배열을 만들고 그 주소를 기억해야 함
+		
+		
+		arr[0][0]=2;
+		arr[0][1]=4;
+		arr[0][2]=6;
+		
+		arr[1][0]=8;
+		arr[1][1]=10;
+		arr[1][2]=12;
+		arr[1][3]=14;
+		arr[1][4]=16;
+		
+		arr[2][0]=18;
+		arr[2][1]=20;
+		
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[i].length; j++) {
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}

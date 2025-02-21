@@ -1,0 +1,53 @@
+package day06.practice;
+
+import java.util.Scanner;
+
+public class 실습문제1_3 {
+
+	public static void main(String[] args) {
+		
+		
+		//3) 2와 동일하고 반복이 종료되면 각 화폐별 매수를 출력하는 프로그램을 작성하시오
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String[] name=new String[5];
+		int[] price=new int[5];
+		
+		while(true) {
+			for(int i=0; i<name.length; i++) {
+				System.out.print("이름을 입력하세요: ");
+				name[i] = sc.next();
+				if(name[i].equals("stop")){
+					for(int j=0; j<i; j++) {
+						int cnt50000 = price[j]/50000;
+						price[j]=price[j]%50000;
+						int cnt10000 = price[j]/10000;
+						price[j]=price[j]%10000;
+						int cnt5000 = price[j]/5000;
+						price[j]=price[j]%5000;
+						int cnt1000 = price[j]/1000;
+						price[j]=price[j]%1000;
+						int cnt500 = price[j]/500;
+						price[j]=price[j]%500;
+						int cnt100 = price[j]/100;
+						price[j]=price[j]%100;
+						int cnt50 = price[j]/50;
+						price[j]=price[j]%50;
+						int cnt10 = price[j]/10;
+						price[j]=price[j]%10;
+						
+						System.out.print(name[j]+" ");
+						System.out.println("오만원: "+cnt50000+", 만원: "+cnt10000+", 오천원: "+cnt5000+", 천원: "+cnt1000
+											+", 오백원: "+cnt500+", 백원: "+cnt100+", 오십원: "+cnt50+", 십원: "+cnt10);
+					}
+					return;
+				}
+				System.out.print("출장비를 입력하세요: ");
+				price[i] = sc.nextInt();	
+			}		
+		}
+			
+	}
+
+}

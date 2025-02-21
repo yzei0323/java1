@@ -1,0 +1,10 @@
+package day06;
+
+public class 학생삭제하기 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,48 @@
+package day04.practice;
+
+import java.util.Scanner;
+
+public class 제어구조문제16번 {
+
+	public static void main(String[] args) {
+		
+		
+		// 15. 연산자를 입력받아  "+", "-", "*", "/", "%", "=", "<", ">", "!", "&&", "||"
+		//     (해당되면 연산자이다, 연산자가 아니다 출력) 연산자 여부를 출력하는 프로그램을 작성하시오
+
+	
+		Scanner sc = new Scanner(System.in);
+	
+		System.out.println("연산자를 입력하세요.");
+		String input = sc.next();
+		
+		if(input.equals("+")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("-")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("*")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("/")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("%")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("=")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("<")) {
+			System.out.println("연산자이다");
+		}else if(input.equals(">")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("!")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("&&")) {
+			System.out.println("연산자이다");
+		}else if(input.equals("||")) {
+			System.out.println("연산자이다");
+		}else {
+			System.out.println("연산자가 아니다");
+		}
+		
+		
+	}
+
+}

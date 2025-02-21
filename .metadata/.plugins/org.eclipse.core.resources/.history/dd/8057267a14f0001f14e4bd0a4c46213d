@@ -1,0 +1,39 @@
+package day06;
+
+import java.util.Scanner;
+
+public class 학생등록하기2 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		//배열특징
+		//1. 같은 자료형이어야 한다
+		//2. 반드시 크기를 알아야 한다 (크기를 정해야 한다)
+		
+		
+		final int MAX = 5;  //현재배열의 전체 크기
+		String[] names = new String[5];
+		Scanner sc = new Scanner(System.in);
+		int index=0;
+		
+		
+		//index
+		// 0  1  2  3  4
+		
+		
+		//크기 체크
+		if(index >= MAX) {
+			
+		}
+		
+		if(index < MAX) {
+			System.out.println("이름을 등록");
+			String name = sc.next();
+			names[index] = name;
+		}
+
+	}
+
+}

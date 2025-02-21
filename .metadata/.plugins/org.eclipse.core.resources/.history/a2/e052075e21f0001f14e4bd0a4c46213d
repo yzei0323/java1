@@ -1,0 +1,29 @@
+package day06.practice;
+
+import java.util.Scanner;
+
+public class 실습문제1_2 {
+
+	public static void main(String[] args) {
+		
+		
+		//2) stop 입력될 때까지 사원명과 출장비가 입력되면 화폐매수를 출력하는 프로그램 작성하시오
+		// 아 그니까 2번은 입력하면 계속계속 화페매수 출력이고
+		// 3번은 stop 입력하면 화페매수 출력?? ㅇㅋ
+		
+	
+		Scanner sc = new Scanner(System.in);
+		
+		int price;
+		String name = null;
+		
+		while(name!="stop") {
+			System.out.print("이름을 입력하세요: ");
+			name = sc.next();
+			System.out.print("출장비를 입력하세요: ");
+			price = sc.nextInt();
+		
+		}
+	}
+
+}
