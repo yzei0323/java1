@@ -1,0 +1,28 @@
+package day07.practice;
+
+public class 함수문제5번 {
+
+	public static void main(String[] args) {
+		
+		//5. 수를 매개변수로 약수를 반환하는 함수 만들기
+		
+	
+		int[] factors = 약수구하기(18);
+		for(int factor : factors) {
+			System.out.println(factor+" ");
+		}
+
+	}
+
+	public static int[] 약수구하기(int num) {
+		int index=0;
+		int[] factors = new int[num];
+		for(int i=1; i<=num; i++) {
+			if(num%i==0) {
+				factors[index] = i;
+				index++;
+			}
+		}
+		return factors;
+	}
+}
