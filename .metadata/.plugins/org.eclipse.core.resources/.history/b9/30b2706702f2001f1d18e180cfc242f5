@@ -21,7 +21,7 @@ public class 실습문제2_1 {
 			int menu = sc.nextInt();
 			
 			//
-			// 완성~~~~~~~
+			// 변경까지는 ㅇㅋ 했어요
 			switch(menu) {
 			case 1:
 				System.out.println("등록할 일정을 작성하세요");				
@@ -44,15 +44,9 @@ public class 실습문제2_1 {
 			case 4:
 				System.out.println("삭제할 일정번호를 선택하세요");
 				int deleteNo=sc.nextInt();
-				deleteNo = deleteNo-1;
-				
-				for(int i=deleteNo; i<toDo.length-1; i++) {
-					toDo[i]=toDo[i+1];
-				}
-				index--;
-				
+				toDo[deleteNo-1]="0";
 				break;
-				
+				//이거잘안돼ㅑ요
 			case 5:
 				System.out.println("종료합니다");
 				break loop;
