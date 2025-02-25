@@ -1,0 +1,24 @@
+package day07.practice;
+
+public class 함수기본문제2번 {
+
+	public static void main(String[] args) {
+		
+		// 2. ★을 세개 출력하는 함수를 만들기
+		
+		star();
+
+	}
+
+	public static void star() {
+		System.out.print("★");
+		System.out.print("★");
+		System.out.println("★");
+	}
+	
+	public static void star2() {
+		for(int i=1; i<=3; i++) {
+			System.out.print("★"); 
+		}
+	}
+}

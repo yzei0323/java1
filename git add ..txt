@@ -1,0 +1,11 @@
+git  add  .
+git commit -m  "놑북수정"
+git push -u origin main
+
+
+--원격주소확인--
+git remote -v 
+
+
+--원격저장소 갖고 와서 합치기--
+git pull origin main

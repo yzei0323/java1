@@ -1,0 +1,27 @@
+package day07.practice;
+
+import java.util.Scanner;
+
+public class 함수기본문제3번 {
+
+	public static void main(String[] args) {
+		
+		// 3. 투자금을 두 배로 만들어 주는 함수 만들기
+		
+		두배로만들기(25400);
+		
+		Scanner sc = new Scanner(System.in);
+		int cost = sc.nextInt();
+		두배로만들기(cost);
+		
+		
+		//함수
+		//입력 O
+		//반환 O
+	}
+
+	public static void 두배로만들기(int cost) {
+		int result = cost*2;
+		System.out.println(result+"원");
+	}
+}

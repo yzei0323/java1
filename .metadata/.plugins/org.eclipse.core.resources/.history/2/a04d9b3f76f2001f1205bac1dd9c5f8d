@@ -1,0 +1,36 @@
+package day07.practice;
+
+import java.util.Scanner;
+
+public class 함수실습_황예지2 {
+
+	public static void main(String[] args) {
+		
+		//숫자 입력받아서 약수와 약수개수 구하는 함수
+		
+		//입력 O
+		//반환 O
+		int cnt = 약수구하기(12);
+		System.out.println("약수의 개수: "+cnt+"개");
+		cnt = 약수구하기(144);
+		System.out.println("약수의 개수: "+cnt+"개");
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자를 입력하세요");
+		int num = sc.nextInt();
+		cnt = 약수구하기(num);
+		System.out.println("약수의 개수: "+cnt+"개");
+		
+	}
+
+	public static int 약수구하기(int num) {
+		int cnt=0;
+		for(int i=1; i<=num; i++) {
+			if(num%i==0) {
+				System.out.print(i+" ");
+				cnt++;
+			}
+		}
+		return cnt;
+	}
+}

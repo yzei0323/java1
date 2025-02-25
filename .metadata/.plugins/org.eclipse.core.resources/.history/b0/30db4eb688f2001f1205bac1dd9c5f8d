@@ -1,0 +1,12 @@
+package day07.practice;
+
+public class 함수문제2번 {
+
+	public static void main(String[] args) {
+		
+		
+		//2. 날씨정보를 반환하는 함수 만들기(임의의 날씨 정보)
+
+	}
+
+}

@@ -1,0 +1,44 @@
+package day07;
+
+public class 설음식만들기_함수 {
+
+	public static void main(String[] args) {
+		
+		
+		//만두만들기
+		String 음식1 = 만두만들기();
+		//떡국만들기
+		//전만들기
+		//갈비찜만들기
+
+	}
+	
+	//만두만들기
+	public static String 만두만들기() {
+		
+		//함수에서 만들어지는 변수를 지역변수라고 한다
+		//함수 지역내에서만 사용이 가능하다
+		String 음식1;
+		System.out.println("만두만들기1");
+		System.out.println("만두만들기2");
+		System.out.println("만두만들기3");
+		System.out.println("만두만들기4");
+		
+		음식1 = "김치만두";
+		
+		return 음식1;
+	}
+	
+	
+	//떡국만들기
+	public static String 떡국만들기(String 음식1) {
+		String 음식2;
+		System.out.println("떡국 만들기1");
+		System.out.println(음식1+" 넣는다");
+		
+		음식2 = "떡국";
+		
+		return 음식2;
+	}
+
+}

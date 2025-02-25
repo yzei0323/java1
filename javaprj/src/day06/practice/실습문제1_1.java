@@ -26,28 +26,28 @@ public class 실습문제1_1 {
 		
 		
 		int cnt50000 = price/50000;
-		price=price%50000;
+		price=price % 50000;
 		
 		int cnt10000 = price/10000;
-		price=price%10000;
+		price=price % 10000;
 		
 		int cnt5000 = price/5000;
-		price=price%5000;
+		price=price % 5000;
 		
 		int cnt1000 = price/1000;
-		price=price%1000;
+		price=price % 1000;
 		
 		int cnt500 = price/500;
-		price=price%500;
+		price=price % 500;
 		
 		int cnt100 = price/100;
-		price=price%100;
+		price=price % 100;
 		
 		int cnt50 = price/50;
-		price=price%50;
+		price=price % 50;
 		
 		int cnt10 = price/10;
-		price=price%10;
+		price=price % 10;
 		
 		System.out.println("오만원: "+cnt50000+", 만원: "+cnt10000+", 오천원: "+cnt5000+", 천원: "+cnt1000
 							+", 오백원: "+cnt500+", 백원: "+cnt100+", 오십원: "+cnt50+", 십원: "+cnt10);

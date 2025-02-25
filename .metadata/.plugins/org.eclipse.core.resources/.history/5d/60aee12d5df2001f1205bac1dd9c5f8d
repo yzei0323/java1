@@ -1,0 +1,26 @@
+package day07.practice;
+
+public class 함수실습0 {
+
+	public static void main(String[] args) {
+	
+		//0. 두 수를 매개변수로 받아 합을 반환하는 함수 만들기
+
+		//함수
+		//입력 o
+		//반환 o
+		
+		sum(3, 5);
+		sum(4, 6);
+		sum(-2, 1)
+;		
+	}
+	
+	public static int sum(int a, int b) {
+		int sum = a+b;
+		System.out.println(sum);
+		
+		return sum;
+	}
+
+}

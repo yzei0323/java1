@@ -1,0 +1,10 @@
+package day07;
+
+public class 일정관리프로그램1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,66 @@
+package day06.practice;
+
+import java.util.Scanner;
+
+public class 실습문제2_1 {
+
+	public static void main(String[] args) {
+		
+		//2. 일정관리프로그램(하루일정은 5개 이내로 한다)
+		
+		//1) 하루일정을 관리하는 프로그램 작성하기 (일차원배열 사용하기)
+
+		Scanner sc = new Scanner(System.in);
+		
+		String[] toDo = new String[5];
+		int index=0;
+		
+		loop: while(true) {
+			System.out.println("1.등록  2.조회  3.변경  4.삭제  5.종료");
+			System.out.print("어떤 걸 하실 건가요? 번호를 입력하세요: ");
+			int menu = sc.nextInt();
+			
+			//
+			// 변경까지는 ㅇㅋ 했어요
+			switch(menu) {
+			case 1:
+				System.out.println("등록할 일정을 작성하세요");				
+				toDo[index]=sc.next();
+				index++; 
+				break;
+			case 2:
+				System.out.println("일정을 조회합니다");
+				for(int i=0; i<index; i++) {
+					System.out.println((i+1)+" "+toDo[i]);
+				}
+				break;
+			case 3:
+				System.out.println("변경할 일정번호를 선택하세요");
+				int updateNo=sc.nextInt();
+				System.out.println("변경할 일정을 작성하세요");
+				String update=sc.next();
+				toDo[updateNo-1]=update;
+				break;
+			case 4:
+				System.out.println("삭제할 일정번호를 선택하세요");
+				int deleteNo=sc.nextInt();
+				deleteNo = deleteNo-1;
+				
+				for(int i=deleteNo; i<toDo.length-1; i++) {
+					toDo[i]=toDo[i+1];
+				}
+				index--;
+				
+				
+				break;
+				//이거잘안돼ㅑ요
+			case 5:
+				System.out.println("종료합니다");
+				break loop;
+			default:
+				System.out.println("다시 입력하세요");
+			}
+		}
+	}
+
+}
