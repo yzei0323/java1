@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/hyj.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KYM.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/LJH.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/lsm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psk.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psw.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/pyr.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/wjy.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/CJT_matrix.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psk2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/java.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KJU.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psw_2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/CHE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/oys.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KMH2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/JYS.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
