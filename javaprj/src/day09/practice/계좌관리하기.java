@@ -26,6 +26,7 @@ public class 계좌관리하기 {
 				break;
 			case 5:
 				System.out.println("종료합니다");
+				System.out.println("");
 				break loop;
 			default:
 				System.out.println("잘못 선택하셨습니다.");
@@ -54,6 +55,7 @@ public class 계좌관리하기 {
 				break;
 			case 5:
 				System.out.println("종료합니다");
+				System.out.println("");
 				break loop;
 			default:
 				System.out.println("잘못 선택하셨습니다.");

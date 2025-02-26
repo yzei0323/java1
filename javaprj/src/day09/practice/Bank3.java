@@ -15,7 +15,7 @@ public class Bank3 {
 	
 	
 	
-	
+	//메뉴메서드
 	public void 메뉴(String ownerName) {
 		this.ownerName = ownerName;
 		System.out.println("안녕하세요 "+ownerName+"님^^");
@@ -25,6 +25,7 @@ public class Bank3 {
 	}
 	
 	
+	//입금메서드
 	public void 입금() {
 		if(인증()) {
 			System.out.println("입금하실 금액을 입력하세요.");
@@ -39,6 +40,7 @@ public class Bank3 {
 	}
 	
 	
+	//출금메서드
 	public void 출금() {
 		if(인증()) {
 			System.out.println("출금하실 금액을 입력하세요.");
@@ -52,12 +54,11 @@ public class Bank3 {
 		}
 	}
 	
-	
+	//조회메서드
 	public void 조회() {
 		System.out.println(ownerName+"님의 현재 계좌잔액은 "+account+"원입니다.");
 		System.out.println("");
 	}
-	
 	
 	public void 적금조회() {
 		System.out.println(ownerName+"님의 적금금액은 "+(int)savingAccount+"원입니다.");
@@ -65,6 +66,7 @@ public class Bank3 {
 	}
 	
 	
+	//인증메서드
 	public boolean 인증() {
 		System.out.println("비밀번호를 입력하세요.");
 		pwd = sc.nextInt();
@@ -80,19 +82,21 @@ public class Bank3 {
 	}
 	
 	
+	//적금메서드
 	public void 적금() {
 		System.out.println("적금계좌에 넣을 금액을 입력하세요");
 		money = sc.nextInt();
 		if(money<=account && money>=0) {
 			account -= money;
 			savingAccount += money;
+			System.out.println("적금 계좌에 "+money+"원이 입금되었습니다.");
 			적금조회();
 		}else {
 			System.out.println("현재 계좌에 있는 금액보다 많습니다.");
 			System.out.println("");
 		}
 		if(savingAccount>=100000) {
-			savingAccount=savingAccount*(1.02);
+			savingAccount*=(1.02);
 			System.out.println("이자 2% 입금되었습니다");
 			적금조회();
 		}
