@@ -1,9 +1,11 @@
 package day09.practice;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Bank3 {
 
+	DecimalFormat format = new DecimalFormat("#,###");
 	Scanner sc = new Scanner(System.in);
 	String ownerName; //예금주명
 	int money;	 	//입금금액
@@ -17,11 +19,36 @@ public class Bank3 {
 	
 	//메뉴메서드
 	public void 메뉴(String ownerName) {
-		this.ownerName = ownerName;
-		System.out.println("안녕하세요 "+ownerName+"님^^");
-		System.out.println("원하시는 메뉴를 선택하세요.");
-		System.out.println("1.입금   2.출금   3.조회   4.적금   5.종료");
-		menu = sc.nextInt();
+		loop:while(true) {
+			this.ownerName = ownerName;
+			System.out.println("안녕하세요 "+ownerName+"님^^");
+			System.out.println("원하시는 메뉴를 선택하세요.");
+			System.out.println("1.입금   2.출금   3.조회   4.적금   5.종료");
+			menu = sc.nextInt();
+			switch(menu) {
+			
+			case 1:
+				입금();
+				break;
+			case 2:
+				출금();
+				break;
+			case 3:
+				조회();
+				break;
+			case 4:
+				적금();
+				break;
+			case 5:
+				System.out.println("종료합니다");
+				System.out.println("");
+				break loop;
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				System.out.println("");
+			}
+		}
+		
 	}
 	
 	
@@ -56,12 +83,12 @@ public class Bank3 {
 	
 	//조회메서드
 	public void 조회() {
-		System.out.println(ownerName+"님의 현재 계좌잔액은 "+account+"원입니다.");
+		System.out.println(ownerName+"님의 현재 계좌잔액은 "+format.format(account)+"원입니다.");
 		System.out.println("");
 	}
 	
 	public void 적금조회() {
-		System.out.println(ownerName+"님의 적금금액은 "+(int)savingAccount+"원입니다.");
+		System.out.println(ownerName+"님의 적금금액은 "+format.format((int)savingAccount)+"원입니다.");
 		System.out.println("");
 	}
 	
@@ -80,6 +107,7 @@ public class Bank3 {
 			return false;
 		}
 	}
+	
 	
 	
 	//적금메서드
