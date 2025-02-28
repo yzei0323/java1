@@ -17,7 +17,7 @@ public class Book1 {
 	
 	
 	public String toString() {
-		return author+" 작가의 <"+ title +">는(은) "+ price +"원 입니다";
+		return author+" 작가의 《"+ title +"》는(은) "+ price +"원 입니다";
 	}
 	
 }
