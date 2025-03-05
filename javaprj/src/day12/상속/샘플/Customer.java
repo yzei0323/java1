@@ -23,6 +23,7 @@ public class Customer {
         System.out.println("이메일: " + email);
         System.out.println("전화번호: " + phoneNumber);
     }
+    
 
     
 }

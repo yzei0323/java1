@@ -16,14 +16,14 @@ public class VIPCustomer extends Customer {
   
     
     public void vipPrintCustomerInfo() {
-       System.out.println("이름: " + name);
+       //System.out.println("이름: " + name);
       //   System.out.println("이메일: " + email);
        //.out.println("전화번호: " + phoneNumber);
     	
     	
     	printCustomerInfo();
     	
-    	System.out.println("전화번호: " + discountRate);
+    	System.out.println("할인율: " + discountRate);
     }
 
    

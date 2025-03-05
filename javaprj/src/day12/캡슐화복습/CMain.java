@@ -5,11 +5,11 @@ public class CMain {
 	public static void main(String[] args) {
 		
 		
-		C c = new C(3,5);
+		C  c = new C(3,5);
 		
-		String 객체내용 = c.toString();
+		String 객체내용=c.toString();
 		
-		System.out.println(객체내용);
+		System.out.println( 객체내용);
 
 	}
 

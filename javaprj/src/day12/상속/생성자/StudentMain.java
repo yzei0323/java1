@@ -2,10 +2,12 @@ package day12.상속.생성자;
 
 public class StudentMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
+
+		Student s= new Student("홍길동" ," 801212" ,1);
 		
-		Student s = new Student("홍길동", "801212", 1);
-	
+		System.out.println(s.toString());
+
 	}
 
 }
