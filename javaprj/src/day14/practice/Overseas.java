@@ -2,26 +2,34 @@ package day14.practice;
 
 public class Overseas implements Delivery{
 
-	String name;
-	int size;
+	private int cnt;
+	private String address;
 	
 	
-	public Overseas(String name, int size) {
-		this.name = name;
-		this.size = size;
+	public Overseas(int cnt, String address) {
+		this.cnt = cnt;
+		this.address = address;
 	}
 
-	
 	@Override
-	public void move() {
-		System.out.println("해외배송은 배송기간이 한달 걸립니다");
-		if(size >= 10) {
-			System.out.println("배로 운송됩니다");
-		}else if(size > 0 && size < 10){
-			System.out.println("비행기로 운송됩니다");
-		}
-		
-		
+	public void transport() {	//운송수단
+		System.out.println("해외배송은 비행기로 운송됩니다");
 	}
 
+	@Override
+	public int getDeliveryFee() {	//배송비
+		return 0;
+	}
+
+
+	@Override
+	public int getDeliveryTime() {		//배송기간
+		if(address.contains("미국")) {
+			return 10;
+		} else if(address.contains("유럽")) {
+			return 14;
+		}else {
+			return 21; //나머지지역
+		}
+	}
 }
