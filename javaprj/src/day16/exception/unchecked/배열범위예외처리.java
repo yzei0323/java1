@@ -4,9 +4,9 @@ public class 배열범위예외처리 {
 
 	public static void main(String[] args) {
 		
-   		//예외처리 
-	    //선택예외 : 예외처리가 선택적이다. 
-		//선택예외방법 : 한 가지  => try~ catch  예외처리 
+   		// 예외처리 
+	    // unchecked : 예외처리가 선택적이다. 
+		// unchecked Exception 처리하는 방법 : 한 가지  => try~ catch  예외처리 
 				
 		
 		

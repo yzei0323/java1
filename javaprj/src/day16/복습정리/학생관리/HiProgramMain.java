@@ -1,4 +1,4 @@
-package day16.학생관리;
+package day16.복습정리.학생관리;
 
 public class HiProgramMain {
 	
