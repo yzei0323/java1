@@ -1,14 +1,14 @@
-package 인터페이스실습_이동우황예지;
+package day14.학생;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Domestic implements Delivery {
+public class 이동우황예지_Domestic implements 이동우황예지_Delivery {
 
 	Scanner sc = new Scanner(System.in);
 
 	String address;
-	Product pd = new Product();
+	이동우황예지_Product pd = new 이동우황예지_Product();
 
 	//제품 정보 출력 및 수량 / 총금액 출력할 부분
 	@Override

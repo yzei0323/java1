@@ -1,8 +1,8 @@
-package 인터페이스실습_이동우황예지;
+package day14.학생;
 
 //해외, 국내에 배송
 
-public interface Delivery {
+public interface 이동우황예지_Delivery {
 
 	public void productCnt(); //보조배터리 + 가격 / 총가격
 	

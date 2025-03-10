@@ -1,13 +1,13 @@
-package 인터페이스실습_이동우황예지;
+package day14.학생;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 // 해외 배송 클래스
-public class Overseas implements Delivery {  
+public class 이동우황예지_Overseas implements 이동우황예지_Delivery {  
 	String address;
     Scanner sc = new Scanner(System.in);
-    Product pd = new Product();  
+    이동우황예지_Product pd = new 이동우황예지_Product();  
 
     @Override
     // 제품 수량 및 배송비 계산

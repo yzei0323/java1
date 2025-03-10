@@ -1,13 +1,13 @@
-package 인터페이스실습_이동우황예지;
+package day14.학생;
 
 import java.util.Scanner;
 
-public class Main {
+public class 이동우황예지_Main {
 	
 	public void run() {
 		Scanner sc = new Scanner(System.in);
-		Delivery ov = new Overseas();
-		Delivery ds = new Domestic();
+		이동우황예지_Delivery ov = new 이동우황예지_Overseas();
+		이동우황예지_Delivery ds = new 이동우황예지_Domestic();
 		
 		loop:while(true) {
 			System.out.println("1. 해외  2. 국내  3. 종료");
@@ -42,7 +42,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Main m = new Main();
+		이동우황예지_Main m = new 이동우황예지_Main();
 		
 		m.run();
 		

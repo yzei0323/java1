@@ -1,12 +1,12 @@
-package 인터페이스실습_이동우황예지;
+package day14.학생;
 
-public class Product {
+public class 이동우황예지_Product {
 	//제품정보
 	String name = "auxiliary battery";
 	int price = 12000;
 	int deliveryFee;
 	
-	public Product() {
+	public 이동우황예지_Product() {
 		
 	}
 
