@@ -1,0 +1,15 @@
+
+ jdk  11 설치와  환경변수 설정 
+
+https://www.oracle.com/kr/java/technologies/javase/jdk11-archive-downloads.html
+ 
+
+
+제어판 -> 시스템  ->  고급설정  ->  환경변수  ->  시스템 변수 
+
+ 
+JAVA_HOME 만들기 
+ : 설치된 자바경로 복사 
+
+path 등록 
+%JAVA_HOME%\bin
