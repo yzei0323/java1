@@ -4,165 +4,158 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class AccountManager {
-    static String[] AccountList = new String[10];
-    static int AccountIndex = 0;
-    
-    static String[] PairingAccountList = new String[10];
-    static int PairingAccountIndex = 0;
-    
-    Scanner sc = new Scanner(System.in);
-    
-    public AccountManager() {
-        
-    }
-    
-    public void OpenedAccount() {
-        System.out.println("은행을 선택하세요. 1. 신한은행 2. 우리은행 3. 하나은행 4. IBK기업은행 5. KB국민은행");
-        int banknum = sc.nextInt();
 
-        String bank = "";
-        switch (banknum) {    
-            case 1: 
-                bank = "신한은행";
-                break;
-            case 2: 
-                bank = "우리은행";
-                break;
-            case 3: 
-                bank = "하나은행";
-                break;
-            case 4: 
-                bank = "IBK기업은행";
-                break;
-            case 5: 
-                bank = "KB국민은행";
-                break;
-            default: 
-                System.out.println("입력이 잘못됐습니다.");
-                return;
-        }
+	Scanner sc = new Scanner(System.in);
 
-        String name = Main.LoggedInUser.getName(); // 현재 로그인된 사용자의 이름을 예금주명으로 사용
+	public AccountManager() {
 
-        System.out.println("입금할 금액을 입력하세요: ");
-        int money = sc.nextInt();
+	}
 
-        String number = "";
-        for(int i = 0; i < 12; i++) {
-            int num = (int) (Math.random() * 10);
-            number += num;
-        }
+	public void OpenedAccount(Scanner sc) {
+		int accountType;
 
-        Account account = new Account(number, name, bank, money);
+		while (true) {
+			System.out.println("생성할 계좌 유형을 선택하세요. 1. 입출금 계좌  2. 주식 계좌");
+			accountType = Integer.parseInt(sc.nextLine());
 
-        AccountList[AccountIndex] = "은행: " + account.getBankname() + ", 계좌번호: " + account.getAccountnum() + 
-                ", 예금주명: " + account.getUsername() + ", 잔액: " + account.getBalance();
+			if (accountType == 1 || accountType == 2) {
+				break;
+			} else {
+				System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+			}
+		}
 
-        System.out.println("계좌 개설 완료!");
-        System.out.println(AccountList[AccountIndex]);
+		System.out.println("은행을 선택하세요. 1. 신한은행 2. 우리은행 3. 하나은행 4. IBK기업은행 5. KB국민은행");
+		int banknum = Integer.parseInt(sc.nextLine());
+		String bank = "";
 
-        AccountIndex++;
-    }
+		switch (banknum) {
+		case 1 -> bank = "신한은행";
+		case 2 -> bank = "우리은행";
+		case 3 -> bank = "하나은행";
+		case 4 -> bank = "IBK기업은행";
+		case 5 -> bank = "KB국민은행";
+		default -> {
+			System.out.println("입력이 잘못됐습니다.");
+			return;
+		}
+		}
 
-    
-    public void ConnectAccount() {
-        System.out.println("연동할 계좌를 선택하세요: ");
-        
-        if (AccountIndex == 0) {
-            System.out.println("연동할 계좌가 없습니다.");
-            return;
-        }
+		String name = Main.LoggedInUser.getName();
+		System.out.println("입금할 금액을 입력하세요: ");
+		int money = Integer.parseInt(sc.nextLine());
 
-        for (int i = 0; i < AccountIndex; i++) {
-            System.out.println((i + 1) + ". " + AccountList[i]);
-        }
-        
-        int select = sc.nextInt();
-        
-        if (select < 1 || select > AccountIndex) {
-            System.out.println("잘못된 입력입니다. 다시 시도하세요.");
-            return;
-        }
-        
-        PairingAccountList[PairingAccountIndex] = AccountList[select - 1];
-        PairingAccountIndex++;
-        
-        for (int i = select - 1; i < AccountIndex - 1; i++) {
-            AccountList[i] = AccountList[i + 1];
-        }
+		int accountNum = (int) (Math.random() * 1000000000);
 
-        AccountList[AccountIndex - 1] = null;
-        AccountIndex--;
+		Account account;
+		if (accountType == 1) {
+			account = new BankAccount(accountNum, name, bank, money);
+		} else {
+			account = new StockAccount(accountNum, name, bank, money);
+		}
 
-        System.out.println("계좌가 성공적으로 연동되었습니다!");
-        System.out.println("연동된 계좌: " + PairingAccountList[PairingAccountIndex - 1]);
-    }
-    
-    public void CancelAccount() {
-        System.out.println("해지할 계좌를 선택하세요: ");
-        
-        if (PairingAccountIndex == 0) {
-            System.out.println("해지할 계좌가 없습니다.");
-            return;
-        }
+		Main.accounts.add(account);
 
-        for (int i = 0; i < PairingAccountIndex; i++) {
-            System.out.println((i + 1) + ". " + PairingAccountList[i]);
-        }
-        
-        int select = sc.nextInt();
-        
-        if (select < 1 || select > PairingAccountIndex) {
-            System.out.println("잘못된 입력입니다. 다시 시도하세요.");
-            return;
-        }
+		System.out.println("계좌 개설 완료!");
+		System.out.println(account);
+	}
 
-        for (int i = select - 1; i < PairingAccountIndex - 1; i++) {
-            PairingAccountList[i] = PairingAccountList[i + 1];
-        }
+	public void ConnectAccount(Scanner sc) {
+		if (Main.accounts.isEmpty()) {
+			System.out.println("연동할 계좌가 없습니다.");
+			return;
+		}
 
-        PairingAccountList[PairingAccountIndex - 1] = null;
-        PairingAccountIndex--;
+		System.out.println("연동할 계좌를 선택하세요:");
+		for (int i = 0; i < Main.accounts.size(); i++) {
+			System.out.println((i + 1) + ". " + Main.accounts.get(i));
+		}
 
-        System.out.println("계좌가 성공적으로 해지되었습니다!");
+		int select = Integer.parseInt(sc.nextLine());
+		if (select < 1 || select > Main.accounts.size()) {
+			System.out.println("잘못된 입력입니다. 다시 시도하세요.");
+			return;
+		}
 
-        if (PairingAccountIndex == 0) {
-            System.out.println("현재 연동된 계좌가 없습니다.");
-        } else {
-            System.out.println("남은 연동된 계좌 목록:");
-            for (int i = 0; i < PairingAccountIndex; i++) {
-                System.out.println((i + 1) + ". " + PairingAccountList[i]);
-            }
-        }
-    }
+		Main.AccountIn = Main.accounts.get(select - 1);
 
-    public void CheckAccount() {
-        System.out.println("연동된 계좌 목록:");
+		System.out.println("계좌가 성공적으로 연동되었습니다!");
+		System.out.println("연동된 계좌: " + Main.AccountIn);
+	}
 
-        if (PairingAccountIndex == 0) {
-            System.out.println("현재 연동된 계좌가 없습니다.");
-        } else {
-            for (int i = 0; i < PairingAccountIndex; i++) {
-                System.out.println((i + 1) + ". " + PairingAccountList[i]);
-            }
-        }
-        
-        int totalBalance = 0;
+	public void CancelAccount(Scanner sc) {
+		if (Main.accounts.isEmpty()) {
+			System.out.println("해지할 계좌가 없습니다.");
+			return;
+		}
 
-        for (int i = 0; i < PairingAccountIndex; i++) {
-            System.out.println((i + 1) + ". " + PairingAccountList[i]);
+		System.out.println("해지할 계좌를 선택하세요:");
+		for (int i = 0; i < Main.accounts.size(); i++) {
+			System.out.println((i + 1) + ". " + Main.accounts.get(i));
+		}
 
-            String accountInfo = PairingAccountList[i];
-            int balanceIndex = accountInfo.lastIndexOf("잔액: ") + 4;
-            String balanceString = accountInfo.substring(balanceIndex).trim();
-            int balance = Integer.parseInt(balanceString);
-            totalBalance += balance;
-        }
+		int select = Integer.parseInt(sc.nextLine());
+		if (select < 1 || select > Main.accounts.size()) {
+			System.out.println("잘못된 입력입니다. 다시 시도하세요.");
+			return;
+		}
 
-        System.out.println("총 자산: " + totalBalance + "원");
-    }
-    
-    public void AccountHistory() {
-    	
-    }
+		Main.accounts.remove(select - 1);
+
+		System.out.println("계좌가 성공적으로 해지되었습니다!");
+	}
+
+	public void CheckAccount(Scanner sc) {
+		if (Main.accounts.isEmpty()) {
+			System.out.println("조회할 계좌가 없습니다.");
+			return;
+		}
+
+		Collections.reverse(Main.accounts);
+
+		for (Account a : Main.accounts) {
+			System.out.println(a.toString());
+		}
+	}
+
+	public void AccountHistory(Scanner sc) {
+
+	}
+
+	public void UpdateAccount(Scanner sc) {
+		if (Main.accounts.isEmpty()) {
+			System.out.println("변경할 계좌가 없습니다.");
+			return;
+		}
+
+		System.out.println("변경할 계좌를 선택하세요:");
+		for (int i = 0; i < Main.accounts.size(); i++) {
+			System.out.println((i + 1) + ". " + Main.accounts.get(i));
+		}
+
+		int select = Integer.parseInt(sc.nextLine());
+		if (select < 1 || select > Main.accounts.size()) {
+			System.out.println("잘못된 입력입니다. 다시 시도하세요.");
+			return;
+		}
+
+		Account selectedAccount = Main.accounts.get(select - 1);
+
+		System.out.print("변경할 은행명을 입력하세요: ");
+		String bankname = sc.nextLine();
+
+		System.out.print("변경할 계좌번호를 입력하세요: ");
+		int accountNum = Integer.parseInt(sc.nextLine());
+
+		System.out.print("변경할 예금주명을 입력하세요: ");
+		String username = sc.nextLine();
+
+		selectedAccount.setBankname(bankname);
+		selectedAccount.setAccountnum(accountNum);
+		selectedAccount.setUsername(username);
+
+		System.out.println("계좌 정보가 성공적으로 변경되었습니다.");
+		System.out.println("변경된 계좌 정보: " + selectedAccount);
+	}
+
 }
