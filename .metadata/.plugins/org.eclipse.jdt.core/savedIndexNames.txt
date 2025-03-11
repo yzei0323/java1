@@ -3,5 +3,4 @@ INDEX VERSION 1.134+C:\Users\황예지\OneDrive\바탕 화면\java1\.metadata\.p
 2565356412.index
 969968605.index
 985413812.index
-2589100255.index
 1865797976.index
