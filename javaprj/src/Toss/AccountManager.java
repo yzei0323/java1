@@ -1,9 +1,13 @@
 package Toss;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class AccountManager {
+public class AccountManager extends Account {
 
 	Scanner sc = new Scanner(System.in);
 
@@ -13,7 +17,6 @@ public class AccountManager {
 
 	public void OpenedAccount(Scanner sc) {
 		int accountType;
-
 		while (true) {
 			System.out.println("생성할 계좌 유형을 선택하세요. 1. 입출금 계좌  2. 주식 계좌");
 			accountType = Integer.parseInt(sc.nextLine());
@@ -30,19 +33,29 @@ public class AccountManager {
 		String bank = "";
 
 		switch (banknum) {
-		case 1 -> bank = "신한은행";
-		case 2 -> bank = "우리은행";
-		case 3 -> bank = "하나은행";
-		case 4 -> bank = "IBK기업은행";
-		case 5 -> bank = "KB국민은행";
-		default -> {
+		case 1:
+			bank = "신한은행";
+			break;
+		case 2:
+			bank = "우리은행";
+			break;
+		case 3:
+			bank = "하나은행";
+			break;
+		case 4:
+			bank = "IBK기업은행";
+			break;
+		case 5:
+			bank = "KB국민은행";
+			break;
+		default: {
 			System.out.println("입력이 잘못됐습니다.");
 			return;
 		}
 		}
 
 		String name = Main.LoggedInUser.getName();
-		System.out.println("입금할 금액을 입력하세요: ");
+		System.out.println("계좌의 잔액을 설정하세요");
 		int money = Integer.parseInt(sc.nextLine());
 
 		int accountNum = (int) (Math.random() * 1000000000);
@@ -78,6 +91,12 @@ public class AccountManager {
 		}
 
 		Main.AccountIn = Main.accounts.get(select - 1);
+		if (Main.AccountIn.getAccountType().equals("입출금 계좌")) {
+
+			Main.AccountIn.setAccountType("입출금 계좌");
+		} else if (Main.AccountIn.getAccountType().equals("주식 계좌")) {
+			Main.AccountIn.setAccountType("주식 계좌");
+		}
 
 		System.out.println("계좌가 성공적으로 연동되었습니다!");
 		System.out.println("연동된 계좌: " + Main.AccountIn);
@@ -111,15 +130,55 @@ public class AccountManager {
 			return;
 		}
 
-		Collections.reverse(Main.accounts);
+		int totalBalance = 0;
+		System.out.println("=== 계좌 목록 ===");
 
-		for (Account a : Main.accounts) {
-			System.out.println(a.toString());
+		for (Account account : Main.accounts) {
+			System.out.print(account);
+			totalBalance += account.getBalance();
 		}
+
+		System.out.println("=================");
+		System.out.println("총 보유금: " + totalBalance + "원");
+		System.out.println("=================");
 	}
 
 	public void AccountHistory(Scanner sc) {
+		System.out.println("=== 송금 및 인출 내역 조회 ===");
 
+		if (Main.AccountIn == null) {
+			System.out.println("연결된 계좌가 없습니다.");
+			return;
+		}
+
+		Main.histories.clear();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader("res/History.txt"))) {
+			String line;
+			while ((line = reader.readLine()) != null) {
+				String[] data = line.split(",");
+
+				if (data[1].equals(Long.toString(Main.AccountIn.getAccountnum()))
+						|| data[3].equals(Long.toString(Main.AccountIn.getAccountnum()))) {
+					History history = new History(data[0], Long.parseLong(data[1]), data[2], Long.parseLong(data[3]),
+							Integer.parseInt(data[4]), java.time.LocalDateTime.parse(data[5]), data[6]);
+
+					Main.histories.add(history);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		if (Main.histories.isEmpty()) {
+			System.out.println("해당 계좌에 송금 및 인출 내역이 없습니다.");
+		} else {
+			for (History h : Main.histories) {
+				System.out.println(h);
+			}
+		}
 	}
 
 	public void UpdateAccount(Scanner sc) {
@@ -141,16 +200,37 @@ public class AccountManager {
 
 		Account selectedAccount = Main.accounts.get(select - 1);
 
-		System.out.print("변경할 은행명을 입력하세요: ");
-		String bankname = sc.nextLine();
+		System.out.println("은행을 선택하세요. 1. 신한은행 2. 우리은행 3. 하나은행 4. IBK기업은행 5. KB국민은행");
+		int banknum = Integer.parseInt(sc.nextLine());
+		String bank = "";
 
-		System.out.print("변경할 계좌번호를 입력하세요: ");
-		int accountNum = Integer.parseInt(sc.nextLine());
+		switch (banknum) {
+		case 1:
+			bank = "신한은행";
+			break;
+		case 2:
+			bank = "우리은행";
+			break;
+		case 3:
+			bank = "하나은행";
+			break;
+		case 4:
+			bank = "IBK기업은행";
+			break;
+		case 5:
+			bank = "KB국민은행";
+			break;
+		default:
+			System.out.println("입력이 잘못됐습니다.");
+			return;
+		}
+
+		long accountNum = (long) (Math.random() * 1000000000);
 
 		System.out.print("변경할 예금주명을 입력하세요: ");
 		String username = sc.nextLine();
 
-		selectedAccount.setBankname(bankname);
+		selectedAccount.setBankname(bank);
 		selectedAccount.setAccountnum(accountNum);
 		selectedAccount.setUsername(username);
 

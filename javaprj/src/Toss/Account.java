@@ -1,8 +1,8 @@
 package Toss;
 
-public class Account{
+public class Account {
 
-	int Accountnum; // 계좌번호
+	long Accountnum; // 계좌번호
 	String username; // 예금주명
 	String bankname; // 은행명
 	int balance; // 잔액
@@ -12,12 +12,20 @@ public class Account{
 
 	}
 
-	public Account(int accountnum, String username, String bankname, int balance, String accountType) {
+	public Account(long accountnum, String username, String bankname, int balance, String accountType) {
 		this.Accountnum = accountnum;
 		this.username = username;
 		this.bankname = bankname;
 		this.balance = balance;
 		this.accountType = accountType;
+	}
+
+	public Account(long accountnum, String username, String bankname, int balance) {
+		super();
+		Accountnum = accountnum;
+		this.username = username;
+		this.bankname = bankname;
+		this.balance = balance;
 	}
 
 	@Override
@@ -26,11 +34,11 @@ public class Account{
 				+ ", 잔액: " + balance;
 	}
 
-	public int getAccountnum() {
+	public long getAccountnum() {
 		return Accountnum;
 	}
 
-	public void setAccountnum(int accountnum) {
+	public void setAccountnum(long accountnum) {
 		Accountnum = accountnum;
 	}
 
@@ -65,5 +73,4 @@ public class Account{
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-
-	}
+}
