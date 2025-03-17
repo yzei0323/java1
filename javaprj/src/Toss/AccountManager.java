@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -48,51 +49,62 @@ public class AccountManager extends Account {
 		case 5:
 			bank = "KB국민은행";
 			break;
-		default: {
+		default:
 			System.out.println("입력이 잘못됐습니다.");
 			return;
-		}
 		}
 
 		String name = Main.LoggedInUser.getName();
 		System.out.println("계좌의 잔액을 설정하세요");
 		int money = Integer.parseInt(sc.nextLine());
 
-		int accountNum = (int) (Math.random() * 1000000000);
+		long accountNum = (long) (Math.random() * 1000000000);
 
 		Account account;
 		if (accountType == 1) {
 			account = new BankAccount(accountNum, name, bank, money);
 		} else {
-			account = new StockAccount(accountNum, name, bank, money);
+			account = new StockAccount((int) accountNum, name, bank, money);
 		}
 
 		Main.accounts.add(account);
+		Main.saveAccountsToFile();
 
 		System.out.println("계좌 개설 완료!");
 		System.out.println(account);
 	}
 
 	public void ConnectAccount(Scanner sc) {
-		if (Main.accounts.isEmpty()) {
+		Main.loadAccountsFromFile();
+
+		String currentUser = Main.LoggedInUser.getName();
+
+		ArrayList<Account> userAccounts = new ArrayList<>();
+		for (Account account : Main.accounts) {
+			if (account.getUsername().equals(currentUser)) {
+				userAccounts.add(account);
+			}
+		}
+
+		if (userAccounts.isEmpty()) {
 			System.out.println("연동할 계좌가 없습니다.");
 			return;
 		}
 
 		System.out.println("연동할 계좌를 선택하세요:");
-		for (int i = 0; i < Main.accounts.size(); i++) {
-			System.out.println((i + 1) + ". " + Main.accounts.get(i));
+		for (int i = 0; i < userAccounts.size(); i++) {
+			System.out.println((i + 1) + ". " + userAccounts.get(i));
 		}
 
 		int select = Integer.parseInt(sc.nextLine());
-		if (select < 1 || select > Main.accounts.size()) {
+		if (select < 1 || select > userAccounts.size()) {
 			System.out.println("잘못된 입력입니다. 다시 시도하세요.");
 			return;
 		}
 
-		Main.AccountIn = Main.accounts.get(select - 1);
-		if (Main.AccountIn.getAccountType().equals("입출금 계좌")) {
+		Main.AccountIn = userAccounts.get(select - 1);
 
+		if (Main.AccountIn.getAccountType().equals("입출금 계좌")) {
 			Main.AccountIn.setAccountType("입출금 계좌");
 		} else if (Main.AccountIn.getAccountType().equals("주식 계좌")) {
 			Main.AccountIn.setAccountType("주식 계좌");
@@ -125,16 +137,26 @@ public class AccountManager extends Account {
 	}
 
 	public void CheckAccount(Scanner sc) {
-		if (Main.accounts.isEmpty()) {
+		Main.loadAccountsFromFile();
+		String currentUser = Main.LoggedInUser.getName();
+
+		ArrayList<Account> userAccounts = new ArrayList<>();
+		for (Account account : Main.accounts) {
+			if (account.getUsername().equals(currentUser)) {
+				userAccounts.add(account);
+			}
+		}
+
+		if (userAccounts.isEmpty()) {
 			System.out.println("조회할 계좌가 없습니다.");
 			return;
 		}
 
 		int totalBalance = 0;
-		System.out.println("=== 계좌 목록 ===");
+		System.out.println("=== 내 계좌 목록 ===");
 
-		for (Account account : Main.accounts) {
-			System.out.print(account);
+		for (Account account : userAccounts) {
+			System.out.println(account);
 			totalBalance += account.getBalance();
 		}
 
