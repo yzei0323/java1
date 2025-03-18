@@ -38,7 +38,7 @@ public class ChatClient extends JFrame implements Runnable, ActionListener {
 		
 		output= new JTextArea();
 		JScrollPane pane = new JScrollPane(output);
-		label = new JLabel("사용자이름");
+		label = new JLabel("뭐해");
 		input = new JTextField();
 		
 		output.setEditable(false);
@@ -63,7 +63,7 @@ public class ChatClient extends JFrame implements Runnable, ActionListener {
 	public void run() {
 		
 		try {
-			Socket s = new Socket(server, 5000);
+			Socket s = new Socket("192.168.100.40", 6100);
 			in = new DataInputStream(  s.getInputStream());
 			out= new DataOutputStream( s.getOutputStream());
 			
@@ -92,7 +92,7 @@ public class ChatClient extends JFrame implements Runnable, ActionListener {
 	}
 	
 	public static void main(String[] args) {
-		new ChatClient("192.168.0.76");
+		new ChatClient("192.168.100.40");
 	}
 	
 	
