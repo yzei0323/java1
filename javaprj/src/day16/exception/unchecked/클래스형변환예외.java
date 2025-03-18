@@ -20,5 +20,5 @@ public class 클래스형변환예외 {
 		 
 		 System.out.println(" 프로그램 정상 종료");
 	}
-
+ 
 }
