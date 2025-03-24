@@ -6,22 +6,23 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/hyj.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KYM.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/LJH.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/lsm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psk.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psw.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/pyr.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/wjy.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/CJT_matrix.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psk2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/java.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KJU.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/psw_2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/CHE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/oys.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/KMH2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/lib/JYS.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/CHE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/CJT_matrix.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/hyj.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/java.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/JYS.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/KJU.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/KMH2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/KYM.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/LJH.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/lsm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/matrix2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/oys.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/psk.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/psk2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/psw.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/psw_2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/pyr.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Documents/java1/자바/lib/wjy.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
